@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="script-demo.js"></script>
+        <title>Study Card Demo</title>
+    </head>
+    <body>
+        <style>
+        #f1_container {
+            position: relative;
+            z-index: 1;
+        }
+
+        #f1_container {
+            perspective: 1000px;
+        }
+
+        #f1_card {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 1.0s linear;
+        }
+
+        #f1_container:active #f1_card {
+            margin: 10px auto;
+            transform: rotateY(180deg);
+        }
+
+        .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .face.back {
+            display: block;
+            transform: rotateY(180deg);
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+    </style>
+        <div id="f1_container">
+            <div id="f1_card" class="shadow">
+                <div class="front face">
+                    <section class="hero is-success is-fullheight has-text-centered">
+                        <div class="hero-body has-text-centered">
+                            <div class="container has-text-centered">
+                                <i class="fas fa-info-circle fa-2x" style="position: absolute; top: -375%; left: -10%" onclick="hint()"></i>
+
+                                <h1 class="title">
+                                    Thermal Dynamics
+                                </h1>
+
+                                <i class="fas fa-arrow-circle-right fa-5x" style="position: absolute; right: -10%" onclick="navigate(true)"></i>
+                                <i class="fas fa-arrow-circle-left fa-5x" style="position: absolute; left: -10%" onclick="navigate(false)"></i>
+
+                                <h2 class="subtitle">What is thermal energy?</h2>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="back face center">
+                    <section class="hero is-success is-fullheight has-text-centered">
+                        <div class="hero-body has-text-centered">
+                            <div class="container has-text-centered">
+                                <h1 class="title">
+                                    Thermal Dynamics
+                                </h1>
+
+                                <i class="fas fa-arrow-circle-right fa-5x" style="position: absolute; right: -10%"></i>
+                                <i class="fas fa-arrow-circle-left fa-5x" style="position: absolute; left: -10%"></i>
+
+                                <h2 class="subtitle">
+                                    Thermal energy refers to the energy contained within a system that is responsible for its temperature. Heat is the flow of thermal energy. A whole branch of physics, thermodynamics, deals with how heat is transferred between different systems and how work is done in the process (see the 1ˢᵗ law of thermodynamics).
+                                </h2>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
